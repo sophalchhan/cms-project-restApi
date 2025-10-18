@@ -1,0 +1,10 @@
+/* Footer.css */
+.footer-icon {
+  transition: transform 0.3s, color 0.3s;
+  color: blue;
+}
+
+.footer-icon:hover {
+  color: #ffdd57; /* change color on hover */
+  transform: scale(1.2); /* slightly grow icon */
+}

@@ -1,0 +1,27 @@
+.nav-link-custom {
+  position: relative;
+  transition: all 0.3s ease;
+  font-family: 'Noto Sans Khmer', sans-serif;
+  font-size: 28px; /* 👉 make font bigger */
+  font-weight: 600; /* make it bold */
+  padding: 10px 20px; /* spacing between menu items */
+}
+
+.nav-link-custom:hover {
+  color: #ffdd57 !important;
+}
+
+.nav-link-custom::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #ffffff;
+  transition: width 0.3s ease;
+}
+
+.nav-link-custom:hover::after {
+  width: 100%;
+}
