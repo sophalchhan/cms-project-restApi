@@ -1,27 +1,28 @@
 .nav-link-custom {
-  position: relative;
+  font-size: 1.3rem !important;
+  padding: 1rem 1.5rem !important;
   transition: all 0.3s ease;
-  font-family: 'Noto Sans Khmer', sans-serif;
-  font-size: 28px; /* 👉 make font bigger */
-  font-weight: 600; /* make it bold */
-  padding: 10px 20px; /* spacing between menu items */
 }
 
 .nav-link-custom:hover {
-  color: #ffdd57 !important;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
 }
 
-.nav-link-custom::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background-color: #ffffff;
-  transition: width 0.3s ease;
+.header-button {
+  font-size: 1.2rem !important;
+  padding: 0.75rem 1.5rem !important;
 }
 
-.nav-link-custom:hover::after {
-  width: 100%;
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .nav-link-custom {
+    font-size: 1.1rem !important;
+    padding: 0.75rem 1rem !important;
+  }
+  
+  .header-button {
+    font-size: 1rem !important;
+    padding: 0.5rem 1rem !important;
+  }
 }

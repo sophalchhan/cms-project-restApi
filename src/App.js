@@ -3,17 +3,30 @@ import Layout from "./components/LayoutPage/Layout";
 import HomePage from "./Pages/Homepage/HomePage";
 import Login from "./Pages/Logingpage/Loginpage";
 import Register from "./Pages/Registerpage/Registerpage";
+import Dashboard from "./Pages/Dashboard/Dashboard";
+import NewsPage from "./Pages/NewsPage/NewsPage";
+import TechnologyPage from "./Pages/TechnologyPage/TechnologyPage";
+import SportsPage from "./Pages/SportsPage/SportsPage";
+import EntertainmentPage from "./Pages/EntertainmentPage/EntertainmentPage";
 
 function App() {
   return (
     <Router>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<HomePage/>} />
-          <Route path="/login" element={<Login/>} />
-          <Route path="/register" element={<Register/>} />
-        </Routes>
-      </Layout>
+      <Routes>
+        {/* Layout ដែលមាន Header និង Footer */}
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="/news" element={<NewsPage/>} />
+          <Route path="/technology" element={<TechnologyPage/>} />
+          <Route path="/sports" element={<SportsPage/>} />
+          <Route path="/entertainment" element={<EntertainmentPage/>} />
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+        </Route>
+
+        {/* Dashboard page ផ្សេងទៀត */}
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
     </Router>
   );
 }

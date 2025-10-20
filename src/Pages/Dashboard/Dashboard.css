@@ -1,0 +1,21 @@
+.dashboard-wrapper {
+  height: 100vh;
+  background-color: #a1a2a4;
+}
+
+.dashboard-main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.dashboard-content {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center;     /* center vertically */
+  flex-direction: column;
+  min-height: calc(100vh - 80px); /* adjust if Topbar has height */
+  padding: 20px;
+}

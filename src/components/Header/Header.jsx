@@ -24,19 +24,39 @@ function Header() {
           <Navbar.Collapse id="cms-navbar">
             {/* LEFT SIDE MENU */}
             <Nav className="me-auto align-items-center">
-              <Nav.Link as={Link} to="/" className="nav-link-custom text-white fw-bold">
+              <Nav.Link 
+                as={Link} 
+                to="/" 
+                className="nav-link-custom text-white fw-bold"
+              >
                 ទំព័រដើម
               </Nav.Link>
-              <Nav.Link as={Link} to="/news" className="nav-link-custom text-white fw-bold">
+              <Nav.Link 
+                as={Link} 
+                to="/news" 
+                className="nav-link-custom text-white fw-bold"
+              >
                 ព័ត៌មានថ្មីៗ
               </Nav.Link>
-              <Nav.Link as={Link} to="/tech" className="nav-link-custom text-white fw-bold">
+              <Nav.Link 
+                as={Link} 
+                to="/technology" 
+                className="nav-link-custom text-white fw-bold"
+              >
                 បច្ចេកវិទ្យា
               </Nav.Link>
-              <Nav.Link as={Link} to="/sport" className="nav-link-custom text-white fw-bold">
+              <Nav.Link 
+                as={Link} 
+                to="/sports" 
+                className="nav-link-custom text-white fw-bold"
+              >
                 កីឡា
               </Nav.Link>
-              <Nav.Link as={Link} to="/kosan" className="nav-link-custom text-white fw-bold">
+              <Nav.Link 
+                as={Link} 
+                to="/entertainment" 
+                className="nav-link-custom text-white fw-bold"
+              >
                 កម្សាន្ដ
               </Nav.Link>
             </Nav>
@@ -47,7 +67,7 @@ function Header() {
                 as={Link}
                 to="/login"
                 variant="outline-light"
-                className="me-2 fw-bold"
+                className="me-2 fw-bold header-button"
               >
                 ចូលគណនី
               </Button>
@@ -55,7 +75,7 @@ function Header() {
                 as={Link}
                 to="/register"
                 variant="light"
-                className="fw-bold text-primary"
+                className="fw-bold text-primary header-button"
               >
                 បង្កើតគណនី
               </Button>

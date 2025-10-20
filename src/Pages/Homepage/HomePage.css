@@ -1,27 +1,51 @@
-/* Card Hover Effect */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1b1b1b;
+}
+
+.section-button {
+  font-size: 1.2rem;
+  padding: 12px 35px;
+  transition: all 0.3s ease;
+  border-width: 2px;
+}
+
+.section-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
 .article-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.2s ease-in-out;
+  border: none !important;
 }
 
 .article-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
 }
 
-/* Image Hover Zoom */
-.article-card img {
-  transition: transform 0.4s ease;
+.load-more-btn {
+  font-size: 1.1rem;
+  padding: 10px 30px;
+  border-width: 2px;
+  transition: all 0.3s ease;
 }
 
-.article-card:hover img {
-  transform: scale(1.05);
+.load-more-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Optional: Tag Animation */
-.article-tag {
-  transition: background-color 0.3s ease;
-}
-
-.article-card:hover .article-tag {
-  background-color: #ff4d4d !important;
+/* Responsive design */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section-button {
+    font-size: 1rem;
+    padding: 10px 25px;
+  }
 }

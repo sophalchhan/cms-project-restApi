@@ -1,0 +1,10 @@
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  min-height: 70px;
+}
+
+.dashboard-title {
+  min-width: 200px;
+}
