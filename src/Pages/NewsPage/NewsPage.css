@@ -1,0 +1,81 @@
+/* NewsPage.css */
+.news-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none !important;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.news-image {
+  transition: all 0.3s ease;
+  height: 200px;
+  object-fit: cover;
+}
+
+.news-card:hover .news-image {
+  transform: scale(1.05);
+}
+
+.tag-button {
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.tag-button.active {
+  background-color: #0d6efd !important;
+  color: white !important;
+  border-color: #0d6efd !important;
+  transform: scale(1.05);
+}
+
+.tag-button:not(.active):hover {
+  background-color: #e9ecef !important;
+  border-color: #0d6efd !important;
+  color: #0d6efd !important;
+}
+
+.load-more-btn {
+  transition: all 0.3s ease;
+}
+
+.load-more-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3);
+}
+
+.author-avatar {
+  transition: all 0.2s ease;
+}
+
+.news-card:hover .author-avatar {
+  transform: scale(1.1);
+}
+
+/* Loading animation */
+.loading-spinner {
+  color: #0d6efd;
+}
+
+/* Error message */
+.error-message {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .tag-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .tag-button {
+    margin-bottom: 0.5rem;
+  }
+}

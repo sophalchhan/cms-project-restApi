@@ -1,42 +1,26 @@
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import { useState } from "react";
-
-const entertainmentArticles = [
-  {
-    id: 10,
-    image: "https://cdn.sabay.com/cdn/media.sabay.com/media/CiMedia/Media/68db95518becd_1759221060_medium.jpg",
-    title: "Midea រៀបចំសន្និសីទតំណាងចែកចាយលើកដំបូងរបស់ខ្លួននៅក្នុងទីផ្សារអាស៊ីប៉ាស៊ីហ្វិក",
-    author: "Meng Songly",
-    date: "OCTOBER 6 2025",
-    views: "31 views",
-    avatar: "https://business-cambodia.com/cms/assets/86f02077-d25e-4e0b-a668-1805e06401a7?format=webp",
-  },
-  {
-    id: 11,
-    image: "https://business-cambodia.com/cms/assets/bd361562-ebde-4dc1-aaab-3104d0ae0363?format=webp",
-    title: "ទោះជាប្រទេសតូចតែ មានទីក្រុងជួបប្រទៈសមុទ្រដ៏ស្អាតបំផុត...",
-    author: "Bunthoeun Koem",
-    date: "OCTOBER 5 2025",
-    views: "22 views",
-    avatar: "https://business-cambodia.com/cms/assets/ece42c55-6cb8-4d51-9551-9d3470c2748a?format=webp",
-  },
-  {
-    id: 12,
-    image: "https://business-cambodia.com/cms/assets/168e6b27-4048-496a-9749-3c9669aa0f54?format=webp",
-    title: "តើហេតុអ្វី? សាកលវិទ្យាល័យ ITC ចាប់ផ្តើមបើកវគ្គសិក្សាថ្មី...",
-    author: "ឌី ស្រីកញ្ញា",
-    date: "OCTOBER 3 2025",
-    views: "1.3K views",
-    avatar: "https://business-cambodia.com/cms/assets/a0a4c4f4-d307-48e0-8262-0634a9319588?format=webp",
-  },
-];
+import { Container, Row, Col, Card, Button, Spinner } from "react-bootstrap";
+import { useState, useEffect } from "react";
 
 function EntertainmentPage() {
+  const [articles, setArticles] = useState([]);
   const [visibleCount, setVisibleCount] = useState(6);
+  const [loading, setLoading] = useState(true);
 
-  const loadMore = () => {
-    setVisibleCount(prev => prev + 6);
-  };
+  useEffect(() => {
+    // Fetch data from Laravel API
+    fetch("http://localhost:4000/articles")
+      .then((res) => res.json())
+      .then((data) => {
+        setArticles(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Error fetching data:", err);
+        setLoading(false);
+      });
+  }, []);
+
+  const loadMore = () => setVisibleCount((prev) => prev + 6);
 
   const renderArticles = (data) => (
     <Row xs={1} md={3} className="g-4">
@@ -69,32 +53,39 @@ function EntertainmentPage() {
     </Row>
   );
 
-  const visibleArticles = entertainmentArticles.slice(0, visibleCount);
-  const hasMore = entertainmentArticles.length > visibleCount;
+  const visibleArticles = articles.slice(0, visibleCount);
+  const hasMore = articles.length > visibleCount;
 
   return (
     <Container className="my-5">
       <Row className="mb-4">
         <Col>
-          <h1 className="display-4 fw-bold text-center">កម្សាន្ដ</h1>
-          <p className="text-muted text-center">ប្រលេឡួន តន្ត្រី ភាពយន្ត និងការកម្សាន្តផ្សេងៗ</p>
+          <h1 className="display-10 fw-bold">កម្សាន្ដ</h1>
+          <p className="text-muted">
+            តន្ត្រី ភាពយន្ត និងការកម្សាន្តផ្សេងៗ
+          </p>
         </Col>
       </Row>
-      
-      {renderArticles(visibleArticles)}
-      
-      {hasMore && (
-        <Row className="mt-4">
-          <Col className="text-center">
-            <Button 
-              variant="outline-primary" 
-              size="lg"
-              onClick={loadMore}
-            >
-              មើលបន្ថែម
-            </Button>
-          </Col>
-        </Row>
+
+      {loading ? (
+        <div className="text-center my-5">
+          <Spinner animation="border" variant="primary" />
+          <p className="mt-3">កំពុងទាញទិន្នន័យ...</p>
+        </div>
+      ) : (
+        <>
+          {renderArticles(visibleArticles)}
+
+          {hasMore && (
+            <Row className="mt-4">
+              <Col className="text-center">
+                <Button variant="outline-primary" size="lg" onClick={loadMore}>
+                  មើលបន្ថែម
+                </Button>
+              </Col>
+            </Row>
+          )}
+        </>
       )}
     </Container>
   );

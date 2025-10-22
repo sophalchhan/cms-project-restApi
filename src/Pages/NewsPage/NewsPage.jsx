@@ -1,96 +1,102 @@
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import { useState } from "react";
-
-const newsArticles = [
-  {
-    id: 1,
-    image: "https://business-cambodia.com/cms/assets/c789ead3-304f-46a0-a4c5-14e712a73fcc?format=webp",
-    title: "អបអរសាទរ! សង្ស័យ ត្រួតពិនិត្យអាកាសយានដ្ឋានថ្មីជាមួយក្រុមហ៊ុន Etihad...",
-    author: "Meng Songly",
-    date: "OCTOBER 6 2025",
-    views: "31 views",
-    avatar: "https://business-cambodia.com/cms/assets/86f02077-d25e-4e0b-a668-1805e06401a7?format=webp",
-  },
-  {
-    id: 2,
-    image: "https://business-cambodia.com/cms/assets/bd361562-ebde-4dc1-aaab-3104d0ae0363?format=webp",
-    title: "ទោះជាប្រទេសតូចតែ មានទីក្រុងជួបប្រទៈសមុទ្រដ៏ស្អាតបំផុត...",
-    author: "Bunthoeun Koem",
-    date: "OCTOBER 5 2025",
-    views: "22 views",
-    avatar: "https://business-cambodia.com/cms/assets/ece42c55-6cb8-4d51-9551-9d3470c2748a?format=webp",
-  },
-  {
-    id: 3,
-    image: "https://business-cambodia.com/cms/assets/168e6b27-4048-496a-9749-3c9669aa0f54?format=webp",
-    title: "តើហេតុអ្វី? សាកលវិទ្យាល័យ ITC ចាប់ផ្តើមបើកវគ្គសិក្សាថ្មី...",
-    author: "ឌី ស្រីកញ្ញា",
-    date: "OCTOBER 3 2025",
-    views: "1.3K views",
-    avatar: "https://business-cambodia.com/cms/assets/a0a4c4f4-d307-48e0-8262-0634a9319588?format=webp",
-  },
-];
+import { Container, Row, Col, Card, Button, Spinner } from "react-bootstrap";
+import { useState, useEffect } from "react";
 
 function NewsPage() {
+  const [articles, setArticles] = useState([]); // store data from API
   const [visibleCount, setVisibleCount] = useState(6);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // ✅ Fetch data from API
+  useEffect(() => {
+    fetch("http://localhost:4000/articles") // <-- Laravel API endpoint
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return res.json();
+      })
+      .then((data) => {
+        setArticles(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setLoading(false);
+      });
+  }, []);
 
   const loadMore = () => {
-    setVisibleCount(prev => prev + 6);
+    setVisibleCount((prev) => prev + 6);
   };
 
-  const renderArticles = (data) => (
-    <Row xs={1} md={3} className="g-4">
-      {data.map((article) => (
-        <Col key={article.id}>
-          <Card className="article-card border-0 shadow-sm rounded-4 overflow-hidden h-100">
-            <Card.Img
-              variant="top"
-              src={article.image}
-              style={{ height: "200px", objectFit: "cover" }}
-            />
-            <Card.Body>
-              <Card.Title className="fw-bold">{article.title}</Card.Title>
-              <div className="d-flex align-items-center mt-3">
-                <img
-                  src={article.avatar}
-                  alt={article.author}
-                  className="rounded-circle me-2"
-                  style={{ width: "40px", height: "40px" }}
-                />
-                <div className="text-muted" style={{ fontSize: "13px" }}>
-                  <div className="fw-semibold text-dark">{article.author}</div>
-                  <div>{article.date} • {article.views}</div>
-                </div>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-      ))}
-    </Row>
-  );
+  const visibleArticles = articles.slice(0, visibleCount);
+  const hasMore = articles.length > visibleCount;
 
-  const visibleArticles = newsArticles.slice(0, visibleCount);
-  const hasMore = newsArticles.length > visibleCount;
+  // 🌀 Loading State
+  if (loading) {
+    return (
+      <div className="text-center my-5">
+        <Spinner animation="border" /> កំពុងទាញទិន្នន័យ...
+      </div>
+    );
+  }
+
+  // ⚠️ Error State
+  if (error) {
+    return (
+      <div className="text-center text-danger my-5">
+        មានបញ្ហាក្នុងការទាញទិន្នន័យ៖ {error}
+      </div>
+    );
+  }
 
   return (
     <Container className="my-5">
       <Row className="mb-4">
         <Col>
-          <h1 className="display-4 fw-bold text-center">ព័ត៌មានថ្មីៗ</h1>
-          <p className="text-muted text-center">ទាំងអស់អំពីព័ត៌មានថ្មីៗនៅកម្ពុជា និងពិភពលោក</p>
+          <h1 className="display-10 fw-bold">ព័ត៌មានថ្មីៗ</h1>
+          <p className="text-muted">
+            ទាំងអស់អំពីព័ត៌មានថ្មីៗនៅកម្ពុជា និងពិភពលោក
+          </p>
         </Col>
       </Row>
-      
-      {renderArticles(visibleArticles)}
-      
+
+      <Row xs={1} md={3} className="g-4">
+        {visibleArticles.map((article) => (
+          <Col key={article.id}>
+            <Card className="article-card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+              <Card.Img
+                variant="top"
+                src={article.image}
+                style={{ height: "200px", objectFit: "cover" }}
+              />
+              <Card.Body>
+                <Card.Title className="fw-bold">{article.title}</Card.Title>
+                <div className="d-flex align-items-center mt-3">
+                  <img
+                    src={article.avatar}
+                    alt={article.author}
+                    className="rounded-circle me-2"
+                    style={{ width: "40px", height: "40px" }}
+                  />
+                  <div className="text-muted" style={{ fontSize: "13px" }}>
+                    <div className="fw-semibold text-dark">{article.author}</div>
+                    <div>
+                      {article.date} • {article.views}
+                    </div>
+                  </div>
+                </div>
+              </Card.Body>
+            </Card>
+          </Col>
+        ))}
+      </Row>
+
       {hasMore && (
         <Row className="mt-4">
           <Col className="text-center">
-            <Button 
-              variant="outline-primary" 
-              size="lg"
-              onClick={loadMore}
-            >
+            <Button variant="outline-primary" size="lg" onClick={loadMore}>
               មើលបន្ថែម
             </Button>
           </Col>

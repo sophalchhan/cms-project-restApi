@@ -1,0 +1,244 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "image": "https://business-cambodia.com/cms/assets/c789ead3-304f-46a0-a4c5-14e712a73fcc?format=webp",
+      "tag": "ព័ត៌មានថ្មីៗ",
+      "title": "អបអរសាទរ! សង្ស័យ ត្រួតពិនិត្យអាកាសយានដ្ឋានថ្មីជាមួយក្រុមហ៊ុន Etihad...",
+      "author": "Meng Songly",
+      "date": "OCTOBER 6 2025",
+      "views": "31 views",
+      "avatar": "https://business-cambodia.com/cms/assets/86f02077-d25e-4e0b-a668-1805e06401a7?format=webp"
+    },
+    {
+      "id": 2,
+      "image": "https://business-cambodia.com/cms/assets/bd361562-ebde-4dc1-aaab-3104d0ae0363?format=webp",
+      "tag": "ព័ត៌មានថ្មីៗ",
+      "title": "ទោះជាប្រទេសតូចតែ មានទីក្រុងជួបប្រទៈសមុទ្រដ៏ស្អាតបំផុត...",
+      "author": "Bunthoeun Koem",
+      "date": "OCTOBER 5 2025",
+      "views": "22 views",
+      "avatar": "https://business-cambodia.com/cms/assets/ece42c55-6cb8-4d51-9551-9d3470c2748a?format=webp"
+    },
+    {
+      "id": 3,
+      "image": "https://business-cambodia.com/cms/assets/168e6b27-4048-496a-9749-3c9669aa0f54?format=webp",
+      "tag": "ព័ត៌មានថ្មីៗ",
+      "title": "តើហេតុអ្វី? សាកលវិទ្យាល័យ ITC ចាប់ផ្តើមបើកវគ្គសិក្សាថ្មី...",
+      "author": "ឌី ស្រីកញ្ញា",
+      "date": "OCTOBER 3 2025",
+      "views": "1.3K views",
+      "avatar": "https://business-cambodia.com/cms/assets/a0a4c4f4-d307-48e0-8262-0634a9319588?format=webp"
+    },
+    {
+      "id": 4,
+      "image": "https://cdn.sabay.com/cdn/media.sabay.com/media/CiMedia/Media/68db95518becd_1759221060_medium.jpg",
+      "tag": "បច្ចេកវិទ្យា",
+      "title": "Midea រៀបចំសន្និសីទតំណាងចែកចាយលើកដំបូងរបស់ខ្លួននៅក្នុងទីផ្សារអាស៊ីប៉ាស៊ីហ្វិក ដោយបង្ហាញពីដំណោះស្រាយពិសេសចំនួន 5",
+      "author": "Meng Songly",
+      "date": "OCTOBER 6 2025",
+      "views": "31 views",
+      "avatar": "https://business-cambodia.com/cms/assets/86f02077-d25e-4e0b-a668-1805e06401a7?format=webp"
+    },
+    {
+      "id": 5,
+      "image": "https://business-cambodia.com/cms/assets/bd361562-ebde-4dc1-aaab-3104d0ae0363?format=webp",
+      "tag": "បច្ចេកវិទ្យា",
+      "title": "ទោះជាប្រទេសតូចតែ មានទីក្រុងជួបប្រទៈសមុទ្រដ៏ស្អាតបំផុត...",
+      "author": "Bunthoeun Koem",
+      "date": "OCTOBER 5 2025",
+      "views": "22 views",
+      "avatar": "https://business-cambodia.com/cms/assets/ece42c55-6cb8-4d51-9551-9d3470c2748a?format=webp"
+    },
+    {
+      "id": 6,
+      "image": "https://business-cambodia.com/cms/assets/168e6b27-4048-496a-9749-3c9669aa0f54?format=webp",
+      "tag": "បច្ចេកវិទ្យា",
+      "title": "តើហេតុអ្វី? សាកលវិទ្យាល័យ ITC ចាប់ផ្តើមបើកវគ្គសិក្សាថ្មី...",
+      "author": "ឌី ស្រីកញ្ញា",
+      "date": "OCTOBER 3 2025",
+      "views": "1.3K views",
+      "avatar": "https://business-cambodia.com/cms/assets/a0a4c4f4-d307-48e0-8262-0634a9319588?format=webp"
+    },
+    {
+      "id": 7,
+      "image": "https://business-cambodia.com/cms/assets/c789ead3-304f-46a0-a4c5-14e712a73fcc?format=webp",
+      "tag": "កីឡា",
+      "title": "អបអរសាទរ! សង្ស័យ ត្រួតពិនិត្យអាកាសយានដ្ឋានថ្មីជាមួយក្រុមហ៊ុន Etihad...",
+      "author": "Meng Songly",
+      "date": "OCTOBER 6 2025",
+      "views": "31 views",
+      "avatar": "https://business-cambodia.com/cms/assets/86f02077-d25e-4e0b-a668-1805e06401a7?format=webp"
+    },
+    {
+      "id": 8,
+      "image": "https://business-cambodia.com/cms/assets/bd361562-ebde-4dc1-aaab-3104d0ae0363?format=webp",
+      "tag": "កីឡា",
+      "title": "ទោះជាប្រទេសតូចតែ មានទីក្រុងជួបប្រទៈសមុទ្រដ៏ស្អាតបំផុត...",
+      "author": "Bunthoeun Koem",
+      "date": "OCTOBER 5 2025",
+      "views": "22 views",
+      "avatar": "https://business-cambodia.com/cms/assets/ece42c55-6cb8-4d51-9551-9d3470c2748a?format=webp"
+    },
+    {
+      "id": 9,
+      "image": "https://business-cambodia.com/cms/assets/168e6b27-4048-496a-9749-3c9669aa0f54?format=webp",
+      "tag": "កីឡា",
+      "title": "តើហេតុអ្វី? សាកលវិទ្យាល័យ ITC ចាប់ផ្តើមបើកវគ្គសិក្សាថ្មី...",
+      "author": "ឌី ស្រីកញ្ញា",
+      "date": "OCTOBER 3 2025",
+      "views": "1.3K views",
+      "avatar": "https://business-cambodia.com/cms/assets/a0a4c4f4-d307-48e0-8262-0634a9319588?format=webp"
+    },
+    {
+      "id": 10,
+      "image": "https://cdn.sabay.com/cdn/media.sabay.com/media/CiMedia/Media/68db95518becd_1759221060_medium.jpg",
+      "tag": "កម្សាន្ដ",
+      "title": "Midea រៀបចំសន្និសីទតំណាងចែកចាយលើកដំបូងរបស់ខ្លួននៅក្នុងទីផ្សារអាស៊ីប៉ាស៊ីហ្វិក ដោយបង្ហាញពីដំណោះស្រាយពិសេសចំនួន 5",
+      "author": "Meng Songly",
+      "date": "OCTOBER 6 2025",
+      "views": "31 views",
+      "avatar": "https://business-cambodia.com/cms/assets/86f02077-d25e-4e0b-a668-1805e06401a7?format=webp"
+    },
+    {
+      "id": 11,
+      "image": "https://business-cambodia.com/cms/assets/bd361562-ebde-4dc1-aaab-3104d0ae0363?format=webp",
+      "tag": "កម្សាន្ដ",
+      "title": "ទោះជាប្រទេសតូចតែ មានទីក្រុងជួបប្រទៈសមុទ្រដ៏ស្អាតបំផុត...",
+      "author": "Bunthoeun Koem",
+      "date": "OCTOBER 5 2025",
+      "views": "22 views",
+      "avatar": "https://business-cambodia.com/cms/assets/ece42c55-6cb8-4d51-9551-9d3470c2748a?format=webp"
+    },
+    {
+      "id": 12,
+      "image": "https://business-cambodia.com/cms/assets/168e6b27-4048-496a-9749-3c9669aa0f54?format=webp",
+      "tag": "កម្សាន្ដ",
+      "title": "តើហេតុអ្វី? សាកលវិទ្យាល័យ ITC ចាប់ផ្តើមបើកវគ្គសិក្សាថ្មី...",
+      "author": "ឌី ស្រីកញ្ញា",
+      "date": "OCTOBER 3 2025",
+      "views": "1.3K views",
+      "avatar": "https://business-cambodia.com/cms/assets/a0a4c4f4-d307-48e0-8262-0634a9319588?format=webp"
+    },
+    {
+      "id": 13,
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      "tag": "សេដ្ឋកិច្ច",
+      "title": "ការវិនិយោគថ្មីនៅកម្ពុជា រំពឹងទុកជំរុញសេដ្ឋកិច្ចរីកចម្រើន ៧% នៅឆ្នាំ ២០២៦",
+      "author": "Sok Dara",
+      "date": "OCTOBER 4 2025",
+      "views": "2.5K views",
+      "avatar": "https://business-cambodia.com/cms/assets/86f02077-d25e-4e0b-a668-1805e06401a7?format=webp"
+    },
+    {
+      "id": 14,
+      "image": "https://images.unsplash.com/photo-1535223289827-42f1e9919769?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      "tag": "សុខភាព",
+      "title": "ការរីករាលដាលនៃជំងឺថ្មីៗ ត្រូវការការប្រុងប្រយ័ត្នពីប្រជាពលរដ្ឋ",
+      "author": "Dr. Chan Vicheka",
+      "date": "OCTOBER 2 2025",
+      "views": "3.1K views",
+      "avatar": "https://business-cambodia.com/cms/assets/ece42c55-6cb8-4d51-9551-9d3470c2748a?format=webp"
+    },
+    {
+      "id": 15,
+      "image": "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      "tag": "កសិកម្ម",
+      "title": "បច្ចេកវិទ្យាថ្មីនៅក្នុងវិស័យកសិកម្ម ជំរុញដំណាំចេញទៅក្រៅប្រទេស",
+      "author": "Kong Samnang",
+      "date": "SEPTEMBER 30 2025",
+      "views": "1.8K views",
+      "avatar": "https://business-cambodia.com/cms/assets/a0a4c4f4-d307-48e0-8262-0634a9319588?format=webp"
+    },
+    {
+      "id": 16,
+      "image": "https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      "tag": "អប់រំ",
+      "title": "ការផ្លាស់ប្តូរប្រព័ន្ធអប់រំថ្មី ផ្តល់នូវឱកាសថ្មីៗដល់និស្សិត",
+      "author": "Prof. Heng Makara",
+      "date": "SEPTEMBER 28 2025",
+      "views": "4.2K views",
+      "avatar": "https://business-cambodia.com/cms/assets/86f02077-d25e-4e0b-a668-1805e06401a7?format=webp"
+    },
+    {
+      "id": 17,
+      "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      "tag": "អចលនទ្រព្យ",
+      "title": "ទីផ្សារអចលនទ្រព្យកម្ពុជា មានសញ្ញារីកចម្រើនឡើងវិញក្រោយពីវិបត្តិ",
+      "author": "Lim Sothea",
+      "date": "SEPTEMBER 25 2025",
+      "views": "2.9K views",
+      "avatar": "https://business-cambodia.com/cms/assets/ece42c55-6cb8-4d51-9551-9d3470c2748a?format=webp"
+    },
+    {
+      "id": 18,
+      "image": "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      "tag": "តន្ត្រី",
+      "title": "តន្ត្រីថ្មីរបស់តារាចម្រៀងកម្ពុជា ទទួលបានការទទួលស្គាល់អន្តរជាតិ",
+      "author": "Music Review",
+      "date": "SEPTEMBER 22 2025",
+      "views": "5.7K views",
+      "avatar": "https://business-cambodia.com/cms/assets/a0a4c4f4-d307-48e0-8262-0634a9319588?format=webp"
+    },
+    {
+      "id": 19,
+      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      "tag": "ភាសហរដ្ឋ",
+      "title": "ការប្រកួតភាសហរដ្ឋកម្ពុជា បើកឱកាសថ្មីដល់យុវជនខ្មែរ",
+      "author": "Sports Cambodia",
+      "date": "SEPTEMBER 20 2025",
+      "views": "3.8K views",
+      "avatar": "https://business-cambodia.com/cms/assets/86f02077-d25e-4e0b-a668-1805e06401a7?format=webp"
+    },
+    {
+      "id": 20,
+      "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      "tag": "ធម្មជាតិ",
+      "title": "ការរកឃើញធម្មជាតិថ្មីនៅក្នុងព្រៃភ្នំក្រវាញ បង្ហាញពីភាពសម្បូរបែប",
+      "author": "Nature Explorer",
+      "date": "SEPTEMBER 18 2025",
+      "views": "2.1K views",
+      "avatar": "https://business-cambodia.com/cms/assets/ece42c55-6cb8-4d51-9551-9d3470c2748a?format=webp"
+    },
+    {
+      "id": 21,
+      "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      "tag": "អាហារ",
+      "title": "របបអាហារខ្មែរបុរាណ ត្រលប់មកវិញជាមួយនឹងរសជាតិថ្មី",
+      "author": "Chef Sopheak",
+      "date": "SEPTEMBER 15 2025",
+      "views": "4.5K views",
+      "avatar": "https://business-cambodia.com/cms/assets/a0a4c4f4-d307-48e0-8262-0634a9319588?format=webp"
+    },
+    {
+      "id": 22,
+      "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      "tag": "ពាណិជ្ជកម្ម",
+      "title": "ផ្សារទំនើបថ្មីនៅរាជធានីភ្នំពេញ បើកទ្វារស្វាគមន៍អតិថិជន",
+      "author": "Business Insider",
+      "date": "SEPTEMBER 12 2025",
+      "views": "3.2K views",
+      "avatar": "https://business-cambodia.com/cms/assets/86f02077-d25e-4e0b-a668-1805e06401a7?format=webp"
+    },
+    {
+      "id": 23,
+      "image": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      "tag": "ទេសចរណ៍",
+      "title": "ទីតាំងទេសចរណ៍ថ្មីនៅខេត្តសៀមរាប ទាក់ទាញភ្ញៀវទេសចរអន្តរជាតិ",
+      "author": "Tourism Guide",
+      "date": "SEPTEMBER 10 2025",
+      "views": "6.3K views",
+      "avatar": "https://business-cambodia.com/cms/assets/ece42c55-6cb8-4d51-9551-9d3470c2748a?format=webp"
+    },
+    {
+      "id": 24,
+      "image": "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+      "tag": "ប្រវត្តិសាស្ត្រ",
+      "title": "ការរកឃើញបុរាណវត្ថុថ្មីនៅអង្គរ បញ្ជាក់ពីអារ្យធម៌ខ្មែរដ៏អស្ចារ្យ",
+      "author": "Archaeology Team",
+      "date": "SEPTEMBER 8 2025",
+      "views": "7.1K views",
+      "avatar": "https://business-cambodia.com/cms/assets/a0a4c4f4-d307-48e0-8262-0634a9319588?format=webp"
+    }
+  ]
+}

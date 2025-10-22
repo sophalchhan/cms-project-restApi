@@ -1,42 +1,26 @@
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import { useState } from "react";
-
-const sportArticles = [
-  {
-    id: 7,
-    image: "https://business-cambodia.com/cms/assets/c789ead3-304f-46a0-a4c5-14e712a73fcc?format=webp",
-    title: "អបអរសាទរ! សង្ស័យ ត្រួតពិនិត្យអាកាសយានដ្ឋានថ្មីជាមួយក្រុមហ៊ុន Etihad...",
-    author: "Meng Songly",
-    date: "OCTOBER 6 2025",
-    views: "31 views",
-    avatar: "https://business-cambodia.com/cms/assets/86f02077-d25e-4e0b-a668-1805e06401a7?format=webp",
-  },
-  {
-    id: 8,
-    image: "https://business-cambodia.com/cms/assets/bd361562-ebde-4dc1-aaab-3104d0ae0363?format=webp",
-    title: "ទោះជាប្រទេសតូចតែ មានទីក្រុងជួបប្រទៈសមុទ្រដ៏ស្អាតបំផុត...",
-    author: "Bunthoeun Koem",
-    date: "OCTOBER 5 2025",
-    views: "22 views",
-    avatar: "https://business-cambodia.com/cms/assets/ece42c55-6cb8-4d51-9551-9d3470c2748a?format=webp",
-  },
-  {
-    id: 9,
-    image: "https://business-cambodia.com/cms/assets/168e6b27-4048-496a-9749-3c9669aa0f54?format=webp",
-    title: "តើហេតុអ្វី? សាកលវិទ្យាល័យ ITC ចាប់ផ្តើមបើកវគ្គសិក្សាថ្មី...",
-    author: "ឌី ស្រីកញ្ញា",
-    date: "OCTOBER 3 2025",
-    views: "1.3K views",
-    avatar: "https://business-cambodia.com/cms/assets/a0a4c4f4-d307-48e0-8262-0634a9319588?format=webp",
-  },
-];
+import { Container, Row, Col, Card, Button, Spinner } from "react-bootstrap";
+import { useState, useEffect } from "react";
 
 function SportsPage() {
-  const [visibleCount, setVisibleCount] = useState(6);
+  const [articles, setArticles] = useState([]);        // ទិន្នន័យអត្ថបទ
+  const [visibleCount, setVisibleCount] = useState(6); // ចំនួនអត្ថបទបង្ហាញ
+  const [loading, setLoading] = useState(true);        // សម្រាប់បង្ហាញ Loading
 
-  const loadMore = () => {
-    setVisibleCount(prev => prev + 6);
-  };
+  useEffect(() => {
+    // fetch API (ឧទាហរណ៍ Laravel API)
+    fetch("http://localhost:4000/articles")
+      .then((res) => res.json())
+      .then((data) => {
+        setArticles(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Error fetching data:", err);
+        setLoading(false);
+      });
+  }, []);
+
+  const loadMore = () => setVisibleCount((prev) => prev + 6);
 
   const renderArticles = (data) => (
     <Row xs={1} md={3} className="g-4">
@@ -69,32 +53,37 @@ function SportsPage() {
     </Row>
   );
 
-  const visibleArticles = sportArticles.slice(0, visibleCount);
-  const hasMore = sportArticles.length > visibleCount;
+  const visibleArticles = articles.slice(0, visibleCount);
+  const hasMore = articles.length > visibleCount;
 
   return (
     <Container className="my-5">
       <Row className="mb-4">
         <Col>
-          <h1 className="display-4 fw-bold text-center">កីឡា</h1>
-          <p className="text-muted text-center">ព័ត៌មានកីឡាថ្មីៗ ព្រឹត្តិការណ៍ និងលទ្ធផល</p>
+          <h1 className="display-10 fw-bold">កីឡា</h1>
+          <p className="text-muted">ព័ត៌មានកីឡាថ្មីៗ ព្រឹត្តិការណ៍ និងលទ្ធផល</p>
         </Col>
       </Row>
-      
-      {renderArticles(visibleArticles)}
-      
-      {hasMore && (
-        <Row className="mt-4">
-          <Col className="text-center">
-            <Button 
-              variant="outline-primary" 
-              size="lg"
-              onClick={loadMore}
-            >
-              មើលបន្ថែម
-            </Button>
-          </Col>
-        </Row>
+
+      {loading ? (
+        <div className="text-center my-5">
+          <Spinner animation="border" variant="primary" />
+          <p className="mt-3">កំពុងទាញទិន្នន័យ...</p>
+        </div>
+      ) : (
+        <>
+          {renderArticles(visibleArticles)}
+
+          {hasMore && (
+            <Row className="mt-4">
+              <Col className="text-center">
+                <Button variant="outline-primary" size="lg" onClick={loadMore}>
+                  មើលបន្ថែម
+                </Button>
+              </Col>
+            </Row>
+          )}
+        </>
       )}
     </Container>
   );
