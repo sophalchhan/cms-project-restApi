@@ -1,15 +1,16 @@
-import { Container, Row, Col, Card, Button, Spinner } from "react-bootstrap";
+import { Container, Row, Col, Card, Button, Spinner, Badge } from "react-bootstrap";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function NewsPage() {
-  const [articles, setArticles] = useState([]); // store data from API
+  const [articles, setArticles] = useState([]);
   const [visibleCount, setVisibleCount] = useState(6);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
-  // ✅ Fetch data from API
   useEffect(() => {
-    fetch("http://localhost:4000/articles") // <-- Laravel API endpoint
+    fetch("http://localhost:4000/articles")
       .then((res) => {
         if (!res.ok) {
           throw new Error("Network response was not ok");
@@ -30,10 +31,13 @@ function NewsPage() {
     setVisibleCount((prev) => prev + 6);
   };
 
+  const viewArticleDetail = (article) => {
+    navigate(`/article/${article.id}`, { state: { article } });
+  };
+
   const visibleArticles = articles.slice(0, visibleCount);
   const hasMore = articles.length > visibleCount;
 
-  // 🌀 Loading State
   if (loading) {
     return (
       <div className="text-center my-5">
@@ -42,7 +46,6 @@ function NewsPage() {
     );
   }
 
-  // ⚠️ Error State
   if (error) {
     return (
       <div className="text-center text-danger my-5">
@@ -55,8 +58,13 @@ function NewsPage() {
     <Container className="my-5">
       <Row className="mb-4">
         <Col>
-          <h1 className="display-10 fw-bold">ព័ត៌មានថ្មីៗ</h1>
-          <p className="text-muted">
+          <div className="d-flex align-items-center gap-3">
+            <h1 className="display-10 fw-bold m-0">ព័ត៌មានថ្មីៗ</h1>
+            <Badge bg="primary" className="fs-6 px-3 py-2">
+              NEW
+            </Badge>
+          </div>
+          <p className="text-muted mt-2">
             ទាំងអស់អំពីព័ត៌មានថ្មីៗនៅកម្ពុជា និងពិភពលោក
           </p>
         </Col>
@@ -65,15 +73,20 @@ function NewsPage() {
       <Row xs={1} md={3} className="g-4">
         {visibleArticles.map((article) => (
           <Col key={article.id}>
-            <Card className="article-card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+            <Card className="article-card border-0 shadow-sm rounded-4 overflow-hidden h-100 d-flex flex-column">
               <Card.Img
                 variant="top"
                 src={article.image}
                 style={{ height: "200px", objectFit: "cover" }}
               />
-              <Card.Body>
+              <Card.Body className="d-flex flex-column">
+                <div className="mb-2">
+                  <small className="article-tag text-primary bg-light px-2 py-1 rounded">
+                    #{article.tag}
+                  </small>
+                </div>
                 <Card.Title className="fw-bold">{article.title}</Card.Title>
-                <div className="d-flex align-items-center mt-3">
+                <div className="d-flex align-items-center mt-3 mb-3">
                   <img
                     src={article.avatar}
                     alt={article.author}
@@ -87,6 +100,17 @@ function NewsPage() {
                     </div>
                   </div>
                 </div>
+                {/* Button inside card */}
+                <div className="mt-auto">
+                  <Button 
+                    variant="outline-primary" 
+                    size="sm" 
+                    className="w-25"
+                    onClick={() => viewArticleDetail(article)}
+                  >
+                    មើលបន្ថែម
+                  </Button>
+                </div>
               </Card.Body>
             </Card>
           </Col>
@@ -97,7 +121,7 @@ function NewsPage() {
         <Row className="mt-4">
           <Col className="text-center">
             <Button variant="outline-primary" size="lg" onClick={loadMore}>
-              មើលបន្ថែម
+              មើលព័ត៌មានបន្ថែម
             </Button>
           </Col>
         </Row>
